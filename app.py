@@ -10,10 +10,10 @@ genai.configure(api_key = os.getenv("GOOGLE-API-KEY"))
 
 #streamlit page
 st.header("Healthcare Advisor")
-input = st.text_input("Hi, I am your healthcare advisor. Ask me about health, diet and fitness")
+input = st.text_input("Hi, I am your medical expert. Ask me information about health, diseases and fitness only ")
 submit = st.button("Submit")
 
-
+# BMI Calculator
 st.sidebar.subheader("BMI Calculator ")
 weight = st.sidebar.text_input("Weight (in kgs):")
 height = st.sidebar.text_input("Height (in cms):")
