@@ -9,8 +9,8 @@ import pandas as pd
 genai.configure(api_key = os.getenv("GOOGLE-API-KEY"))
 
 #streamlit page
-st.header("Healthcare Advisor")
-input = st.text_input("Hi, I am your medical expert. Ask me information about health, diseases and fitness only ")
+st.header("👨‍⚕️ Healthcare Advisor")
+input = st.text_input("Hi, I am your medical expert.⚕️  Ask me information about health, diseases and fitness only ")
 submit = st.button("Submit")
 
 # BMI Calculator
