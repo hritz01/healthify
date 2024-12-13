@@ -40,8 +40,15 @@ if bmi:
 
 def get_response(text_input):
     model = genai.GenerativeModel("gemini-pro")
+    prompt_template = '''I want you to acts as a Dietician and Healthcare Expert
+and answer the questions on Health & Related Topics Only. If the User is asking information/
+prompting on the topics other than Health, just pass the Message - "I am a Healthcare Chatbot
+and can answer questions related to Health , Diseases & Fitness Only". Please note if someone asks for
+medicines or medicines name, just pass the message -  "Please reach out to your Doctor for Medication."
+So, here is the Question:- {prompt}'''
+    full_prompt = prompt_template.format(prompt=text_input)
     if text_input!="":
-        response = model.generate_content(text_input)
+        response = model.generate_content(full_prompt)
         return response.text
     else:
         st.write("Please enter the prompt !!")
